@@ -3,16 +3,23 @@ require 'spec_helper'
 describe "StaticPages" do
   subject { page }
 
+  it "should have the right links on the layout" do
+    visit root_path
+
+  end
+
   shared_examples_for "all static pages" do
-    it { should_have_content(heading) }
-    it { should_have_title(full_title(page_title)) }
-  end  
+    it { should have_content(heading) }
+    it { should have_title(full_title(page_title)) }
+  end
 
   describe "Home page" do
   	before { visit root_path }
-    it { should have_content('Sample App') }
-    it { should have_title(full_title('')) }
-    it { should_not have_title('| Home')}
+    let(:heading) { 'Sample App' }
+    let(:page_title) { '' }
+
+    it_should_behave_like "all static pages"
+    it { should_not have_title('| Home') }
   end
 
   describe "Help page" do
