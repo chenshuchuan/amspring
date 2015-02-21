@@ -1,10 +1,7 @@
 test:
-  adapter: postgresql
-  encoding: utf8
-  database: sample_test
-  host: localhost
-  username: csc
-  password: "123456"
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
   timeout: 5000
 
 development:
