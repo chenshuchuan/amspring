@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe "StaticPages" do
   subject { page }
+
+  shared_examples_for "all static pages" do
+    it { should_have_content(heading) }
+    it { should_have_title(full_title(page_title)) }
+  end  
+
   describe "Home page" do
   	before { visit root_path }
     it { should have_content('Sample App') }
