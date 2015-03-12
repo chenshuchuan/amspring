@@ -4,8 +4,8 @@
     <%= link_to image_tag("logo.png", alt: "Rails"), root_path, id: "logo" %>
     <nav>
       <ul class="nav pull-right header-dd" style="margin-top: 25px;">
-        <li><%= link_to "主页", '#' %></li>
-        <li><%= link_to "帮助", '#' %></li>
+        <li><%= link_to "home", root_path %></li>
+        <li><%= link_to "help", help_path %></li>
         <% if signed_in? %>
           <li><%= link_to "Users", '#' %></li>
           <li id="fat-menu" class="dropdown">
@@ -20,8 +20,10 @@
             <%= link_to "Sign out", signout_path, method: "delete" %>
           </li>
         <% else %> 
-          <li><%= link_to "Sign in", signin_path %></li>
+          <li><%= link_to "Signin", signin_path %></li>
+          <li><%= link_to "signup", signup_path %></li>
         <% end %>
+
       </ul>	
     </nav>
   </div>
