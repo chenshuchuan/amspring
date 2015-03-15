@@ -26,6 +26,7 @@
   width: 220px;
   height: 220px;
   border-radius: 50%;
+  margin-left: 22px; /* csc */
 }
 .ih-item.circle .img {
   position: relative;
@@ -66,14 +67,6 @@
   height: 205px;
   border: 8px solid #fff;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.hhh{
-  margin-left: 318px;
-}
-
-.hhhh{
-  margin-left: 635px;
 }
 
 .ih-item.square .info {
