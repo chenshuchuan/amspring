@@ -77,13 +77,29 @@ p {
 .header-dd{
   font-size: 20px;
 }
+
+/* home */
+.home {
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #eee;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px; 
+  }
+
 /* footer */
 footer {
   margin-top: 45px;
-  margin-bottom: 100px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
   color: $lightGray;
+  background-color: black;
+  height: 240px;
   a {
     color: #555;
   }
@@ -94,11 +110,12 @@ footer {
     float: left;
   }
   ul {
-    float: right;
     list-style: none;
+    margin-left: 160px;
+    margin-top: 50px;
     li {
-      float: left;
-      margin-left: 10px;
+      margin-left: 30px;
+      line-height: 30px;
     }
   }
 

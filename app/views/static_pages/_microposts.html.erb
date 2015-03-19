@@ -1,0 +1,7 @@
+<h1>我的博客</h1>
+  <% @microposts.each do |m| %>
+    <%= m.content %><br/>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(m.created_at) %> ago.
+    </span><br/>    
+  <% end %>
