@@ -1,0 +1,9 @@
+<h1><%= @micropost.title %></h1>
+<table>
+<td>作者: <%= @user.name %></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    创建时间: <%= @micropost.created_at.strftime('%Y-%m-%d %H:%M') %>
+ </td>   
+</table>
+<br />
+<p><%= @micropost.content.html_safe %></p>
