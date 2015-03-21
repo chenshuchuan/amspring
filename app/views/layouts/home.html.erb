@@ -12,10 +12,12 @@
   <%= render 'layouts/home_page'%>
   <div class="container">
     <div class="con">
+    <div class="conn">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <%= yield %>
+    </div>
     </div>
     
     <br />

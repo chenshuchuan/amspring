@@ -1,0 +1,33 @@
+<% sum = 0 %>
+<div>评论：<%= @micropost.comments.count()%>条</div><br/>
+<% @micropost.comments.each do |comment| %>
+<div class="comment">
+  <div style="float: left;">
+    <%= gravatar_for avatar(comment.user_id) %>
+  </div>
+  
+  <table class="table">  
+    <div style="margin-left: 70px;"> 
+      <ul style="text-decoration: underline">
+        <li style="list-style-type:none;float:left;"><%= comment_user(comment.user_id) %></li>
+        <li style="list-style-type:none;float:left;margin: 0 20px">评论于<%= time_ago_in_words(comment.created_at) %>前</li>
+        <li style="list-style-type:none; margin-left: 750px"><%= sum += 1 %>楼</li>
+      </ul>
+    </div>
+    <div style="margin-left: 70px;">
+      <ul>
+        <%= comment.body.html_safe %>
+      </ul>
+    </div>
+  </table>
+  <div>
+    <% if current_user?(@micropost.user) %>
+    <%= link_to '删除此评论', [comment.micropost, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                class: "btn btn-mini btn-danger" %>
+    <% end %>
+  </div>
+</div>
+<hr />
+<% end %>

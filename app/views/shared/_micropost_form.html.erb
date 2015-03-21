@@ -1,8 +1,9 @@
 <%= form_for(@micropost) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
+	<br />
 	<div class="field">
 	    <%= f.text_field :title, placeholder: "请在此输入博客题目..." %><br />
 		<%= f.kindeditor :content, :simple_mode => true %>
 	</div>
-	<%= f.submit "Post", class: "btn btn-large btn-primary" %>
+	<%= f.submit "创建", class: "btn btn-primary" %>
 <% end %>

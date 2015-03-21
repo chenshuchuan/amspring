@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320052955) do
+ActiveRecord::Schema.define(version: 20150321094823) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.integer  "micropost_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["micropost_id"], name: "index_comments_on_micropost_id", using: :btree
 
   create_table "microposts", force: true do |t|
     t.text     "content"
@@ -42,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150320052955) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

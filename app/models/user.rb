@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 									 class_name: "Relationship",
 									 dependent: :destroy
 	has_many :followers, through: :reverse_relationships, source: :follower
-
+    
+    mount_uploader :avatar, AvatarUploader
 	validates :name, presence: true, length: { maximum: 50 }
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token

@@ -1,7 +1,13 @@
 module MicropostsHelper
-  
+  include StaticPagesHelper
   def wrap(content)
 	sanitize(raw(content.split.map{ |s| wrap_long_string(s) }.join(' ')))
+  end
+
+  def comment_user(user_id)
+    @user = User.find(user_id)
+    @user.name
+
   end
 
   private

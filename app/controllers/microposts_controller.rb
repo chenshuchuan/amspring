@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :signed_in_user, only: [:new, :create, :destroy]
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:destroy, :edit, :update ]
 
   def index
   end
@@ -28,6 +28,21 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def edit
+    @micropost = Micropost.find(params[:id])
+  end
+
+  def update
+    @user = User.find(@micropost.user_id)
+    @micropost = Micropost.find(params[:id])
+    if @micropost.update_attributes(micropost_params)
+      flash[:success] = 'micropost updated'
+      render 'show'
+    else
+      redirect_to current_user
+    end
+  end
+
   def destroy
     @micropost.destroy
     redirect_to current_user
@@ -40,6 +55,6 @@ class MicropostsController < ApplicationController
 
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])
-      redirect_to root_url if @micropost.nil?
+      redirect_to root_url if @micropost.nil? 
     end
 end

@@ -1,9 +1,43 @@
+<br />
 <h1><%= @micropost.title %></h1>
-<table>
+<table class="table table-hover">
 <td>作者: <%= @user.name %></td>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<td>
     创建时间: <%= @micropost.created_at.strftime('%Y-%m-%d %H:%M') %>
- </td>   
+ </td>  
+  <% if current_user?(@micropost.user) %>
+    <td>
+      更新时间: <%= @micropost.updated_at.strftime('%Y-%m-%d %H:%M') %>
+    </td>  
+    <td>
+      <%= link_to "编辑", edit_micropost_path(@micropost), class: "btn btn-mini  btn-info"%>
+    </td>
+    <td>
+      <%= link_to "删除", @micropost, method: :delete,
+                                              data: { confirm: "You sure?" },
+                                              title: @micropost.title,
+                                              class: "btn btn-mini btn-danger" %>
+    </td> 
+  <% end %>
 </table>
 <br />
-<p><%= @micropost.content.html_safe %></p>
+<p><%= @micropost.content.html_safe %></p><hr/>
+
+<% if !@micropost.comments.nil? %>
+  <%= render 'comment' %>
+<% end %>
+
+<%= form_for([ @micropost,  @micropost.comments.build]) do |f| %>
+  <p> <%= f.hidden_field :user_id %></p>
+  <p>
+    <%= f.kindeditor :body, :simple_mode => true, :width => 778, :height => 100 %>
+  </p>
+  <p>
+  <% if signed_in? %>
+    <%= f.submit "提交评论", class: "btn btn-primary" %>
+  <% else %>
+    评论请先<%= link_to "登录", signin_path %>
+  <% end %>  
+  </p>
+  <br />
+<% end %>

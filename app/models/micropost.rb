@@ -1,7 +1,8 @@
 class Micropost < ActiveRecord::Base
   belongs_to :user
+  has_many :comments, dependent: :destroy
   default_scope -> { order('created_at DESC') }
-  validates :content, presence: true, length: { maximum: 5000 }
+  validates :content, presence: true, length: { maximum: 50000 }
   validates :title, presence: true, length: { maximum: 50 }
   validates :user_id, presence: true
 
