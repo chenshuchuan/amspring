@@ -2,19 +2,19 @@
 <div>评论：<%= @micropost.comments.count()%>条</div><br/>
 <% @micropost.comments.each do |comment| %>
 <div class="comment">
-  <div style="float: left;">
+  <div class="pull-left">
     <%= gravatar_for avatar(comment.user_id) %>
   </div>
   
   <table class="table">  
-    <div style="margin-left: 70px;"> 
-      <ul style="text-decoration: underline">
-        <li style="list-style-type:none;float:left;"><%= comment_user(comment.user_id) %></li>
-        <li style="list-style-type:none;float:left;margin: 0 20px">评论于<%= time_ago_in_words(comment.created_at) %>前</li>
-        <li style="list-style-type:none; margin-left: 750px"><%= sum += 1 %>楼</li>
+    <div class="pull-left02"> 
+      <ul>
+        <li class="li-01"><%= comment_user(comment.user_id) %></li>
+        <li class="li-02">评论于&nbsp;<%= time_ago_in_words(comment.created_at) %>&nbsp;前</li>
+        <li class="li-03"><%= sum += 1 %>楼</li>
       </ul>
     </div>
-    <div style="margin-left: 70px;">
+    <div class="pull-left02">
       <ul>
         <%= comment.body.html_safe %>
       </ul>
