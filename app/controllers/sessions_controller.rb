@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   		flash[:success] = "#{user.name}，欢迎您再次登录博客!"
   		redirect_back_or user
   	else
-  		flash[:error] = '密码或者邮箱错误！请从新输入！' # Not quite right!
+  		flash[:error] = I18n.t('errors_login') # Not quite right!
   		render 'new'
   	end	
   end

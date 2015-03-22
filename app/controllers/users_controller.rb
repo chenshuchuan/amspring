@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "更新成功"
+      flash[:success] = I18n.t("update_success")
       sign_in @user
       redirect_to @user
     else
@@ -45,19 +45,19 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "删除用户成功."
+    flash[:success] = I18n.t("delete_user_success")
     redirect_to users_url
   end
 
   def following
-    @title = "Following"
+    @title = I18n.t("following")
     @user = User.find(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = I18n.t("followers")
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'

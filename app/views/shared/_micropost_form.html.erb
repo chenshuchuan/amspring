@@ -2,8 +2,9 @@
 	<%= render 'shared/error_messages', object: f.object %>
 	<br />
 	<div class="field">
-	    <%= f.text_field :title, placeholder: "请在此输入博客题目..." %><br />
+	    <%= f.text_field :title, placeholder: t("new_blog_here") %><br />
 		<%= f.kindeditor :content, :simple_mode => true %>
 	</div>
-	<%= f.submit "创建", class: "btn btn-primary" %>
+	<%= f.submit t("new"), class: "btn btn-primary" %>
 <% end %>
+<br />

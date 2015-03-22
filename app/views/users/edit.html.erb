@@ -1,6 +1,6 @@
-<% provide(:title, "编辑个人信息") %>
+<% provide(:title, t("edit")) %>
 <br />
-<h1>编辑个人信息</h1>
+<h1><%= t('edit')%></h1>
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
@@ -9,23 +9,25 @@
       <%= image_tag(@user.avatar_url) if @user.avatar? %>
       <%= f.file_field :avatar, multiple: true %>
       -->
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+    <ul class="unstyled">
+      <li><%= t('name') %></li>
+      <li><%= f.text_field :name %></li>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <li><%= t('email') %></li>
+      <li><%= f.text_field :email %></li>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <li><%= t('password') %></li>
+      <li><%= f.password_field :password %></li>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation %><br />
+      <li><%= f.label :password_confirmation, t("confirmation") %></li>
+      <li><%= f.password_field :password_confirmation %></li>
 
-      <%= f.submit "保存", class: "btn btn-large btn-primary" %>
+      <li><%= f.submit t("save"), class: "btn btn-large btn-primary" %></li>
+    </ul>  
     <% end %>
     
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails" target="_blank">changes</a>
+    <a href="http://gravatar.com/emails" target="_blank"><%= t('changes') %></a>
   </div>
 </div>
 <br />    

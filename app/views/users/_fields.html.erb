@@ -1,13 +1,16 @@
 <%= render 'shared/error_messages', object: f.object %>
 
-<%= f.label :name %>
+<p><%= t('name') %></p>
 <%= f.text_field :name %>
 
-<%= f.label :email %>
+<p><%= t('email') %></p>
 <%= f.text_field :email %>
 
-<%= f.label :password %>
+<p>
+  <%= t('password') %>(
+  <%= t('at_least_6_characters')%>)
+</p>
 <%= f.password_field :password %>
 
-<%= f.label :password_confirmation, "Confirmation" %>
+<%= f.label :password_confirmation, t("confirmation") %>
 <%= f.password_field :password_confirmation %>

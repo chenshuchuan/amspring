@@ -1,5 +1,5 @@
 <br />
-<h1>我的博客</h1>
+<h1><%= t('my_blog')%></h1>
   <% @microposts.each do |m| %>
   <table class="table table-hover">  
   <tr class="info">
@@ -7,7 +7,7 @@
     <%= gravatar_for avatar(m.user_id) %>
     <p><%= link_to m.title, micropost_path(m.id) %></p>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(m.created_at) %> ago.
+      <%= time_ago_in_words(m.created_at) %>
     </span>
   </td>
   </tr>
