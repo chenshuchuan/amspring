@@ -250,3 +250,5 @@ zh:
   author: 作者
   created_time: 创建时间
   updated_time: 更新时间
+  weclome: '%{name}, 欢迎您来到博客！'
+  congratulations: '%{name},恭喜您注册成功!'

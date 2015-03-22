@@ -250,3 +250,5 @@ en:
   author: Author
   created_time: created time
   updated_time: updated time
+  weclome: '%{name}, weclome  to blog !'
+  congratulations: '%{name}, Congratulations on your successful registration !'

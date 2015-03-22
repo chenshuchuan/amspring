@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "#{@user.name}，恭喜您注册成功！"
+      flash[:success] = I18n.t(:congratulations, :name => @user.name )
       redirect_to @user
     else
       render 'new'
