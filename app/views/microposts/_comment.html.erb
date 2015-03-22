@@ -3,7 +3,7 @@
 <% @micropost.comments.each do |comment| %>
 <div class="comment">
   <div class="pull-left">
-    <%= gravatar_for avatar(comment.user_id) %>
+    <%= link_to gravatar_for(avatar(comment.user_id)), user_path(comment.user_id) %>
   </div>
   
   <table class="table">  
@@ -22,7 +22,7 @@
   </table>
   <div>
     <!--% if current_user?(@micropost.user) %-->
-    <% if current_user.admin? %>
+    <% if signed_in? && current_user.admin? %>
     <%= link_to t('delete_it'), [comment.micropost, comment],
                 method: :delete,
                 data: { confirm: t('your_sure') },
