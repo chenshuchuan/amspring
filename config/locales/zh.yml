@@ -222,7 +222,7 @@ zh:
   help: 帮助
   new_micropost: 新建博客
   account: 账户信息
-  name: 用户名
+  name: 姓名
   email: 邮箱
   password: 密码
   at_least_6_characters: 至少6位字母或者数字.符号组合
