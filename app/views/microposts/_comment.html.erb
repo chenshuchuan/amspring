@@ -22,7 +22,7 @@
   </table>
   <div>
     <% if current_user?(@micropost.user) %>
-    <%= link_to it('delete_it'), [comment.micropost, comment],
+    <%= link_to t('delete_it'), [comment.micropost, comment],
                 method: :delete,
                 data: { confirm: t('your_sure') },
                 class: "btn btn-mini btn-danger" %>

@@ -17,7 +17,7 @@ class MicropostsController < ApplicationController
   def create
   	@micropost = current_user.microposts.build(micropost_params)
   	if @micropost.save
-  	  flash[:success] = "Micropost created!"
+  	  flash[:success] = I18n.t("micropost_created")
   	  redirect_to current_user
   	else
 =begin
@@ -36,7 +36,7 @@ class MicropostsController < ApplicationController
     @user = User.find(@micropost.user_id)
     @micropost = Micropost.find(params[:id])
     if @micropost.update_attributes(micropost_params)
-      flash[:success] = 'micropost updated'
+      flash[:success] = I18n.t("micropost_updated")
       render 'show'
     else
       redirect_to current_user

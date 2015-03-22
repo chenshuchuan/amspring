@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @micropost = Micropost.find(params[:micropost_id])
     params[:comment][:user_id] = current_user.id
     @comment = @micropost.comments.create(comment_params)
+    flash[:success] = I18n.t("comment_created")
     redirect_to micropost_path(@micropost)
   end
  

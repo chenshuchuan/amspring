@@ -252,3 +252,6 @@ en:
   updated_time: updated time
   weclome: '%{name}, weclome  to blog !'
   congratulations: '%{name}, Congratulations on your successful registration !'
+  micropost_created: Micropost created!
+  micropost_updated: Micropost updated!
+  comment_created: Comment created!

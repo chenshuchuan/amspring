@@ -252,3 +252,6 @@ zh:
   updated_time: 更新时间
   weclome: '%{name}, 欢迎您来到博客！'
   congratulations: '%{name},恭喜您注册成功!'
+  micropost_created: 博客创建成功！
+  micropost_updated: 博客更新成功!
+  comment_created: 添加评论成功！
