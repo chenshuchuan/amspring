@@ -9,4 +9,4 @@ Rails 4.0.0<br />
 PostgreSQL 9.1<br />
 
 demo web:<br />
-[amspring.herokuapp.com](amspring.herokuapp.com)
+[amspring.herokuapp.com](http://amspring.herokuapp.com)
