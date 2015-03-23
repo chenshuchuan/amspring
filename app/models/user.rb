@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
 	 				  format: { with: VALID_EMAIL_REGEX }, 
 	 				  uniqueness: { case_sensitive: false }
 	has_secure_password
+
 	validates :password, length: { minimum: 6 } 	
 
 	def User.new_remember_token
@@ -43,6 +44,19 @@ class User < ActiveRecord::Base
 	def unfollow!(other_user)
 	  relationships.find_by(followed_id: other_user.id).destroy
 	end
+
+	def send_password_reset
+  	  generate_token(:password_reset_token)
+  	  self.password_reset_sent_at = Time.zone.now
+      save(validate: false)
+      UserMailer.password_reset(self).deliver
+    end
+
+	def generate_token(column)
+      begin
+        self[column] = SecureRandom.urlsafe_base64
+      end while User.exists?(column => self[column])
+    end	
 
     private
 

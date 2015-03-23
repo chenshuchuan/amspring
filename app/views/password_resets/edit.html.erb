@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @user, :url => password_reset_path(params[:id]) do |f| %>
+      <% if @user.errors.any? %>
+        <div class="error_messages">
+            <% for message in @user.errors.full_messages %>
+              <ul class="ul-top">
+                <li><%= message %></li>
+              <ul>  
+            <% end %>
+        </div>
+      <% end %>
+      <ul class="unstyled ul-top">
+        <li><%= t('password') %></li>
+        <li><%= f.password_field :password %><li>
+        <li><%= t('confirmation') %><li>
+        <li><%= f.password_field :password_confirmation %></li>
+        <li><%= f.submit t("update_password"), class: "btn btn btn-primary" %></li>
+      </ul>
+    <% end %>
+  </div> 
+</div>

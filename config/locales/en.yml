@@ -255,3 +255,7 @@ en:
   micropost_created: Micropost created!
   micropost_updated: Micropost updated!
   comment_created: Comment created!
+  forgotten_password: forgotten_password?
+  reset_password: Reset Password
+  reset_email: Please enter the registered email address
+  update_password: Update Password

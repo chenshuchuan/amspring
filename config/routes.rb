@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  get "password_resets/new"
   resources :users
   resources :users do
     member do
@@ -17,6 +18,7 @@ SampleApp::Application.routes.draw do
     resources :comments
   end
   resources :relationships, only: [:create, :destroy]
+  resources :password_resets
   
   root to: 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
