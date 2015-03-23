@@ -259,3 +259,10 @@ en:
   reset_password: Reset Password
   reset_email: Please enter the registered email address
   update_password: Update Password
+  send_successfully: send_successfully
+  email_null: Email you entered is not registered
+  login_again: login again
+  send_expired: Your authentication information has expired
+  send_resetpassword_email: To reset your password. click the URL below.
+  pass_email: If you did not request your password to be reset. just ignore this email and your password will continue to stay the same.
+  hi: Dear

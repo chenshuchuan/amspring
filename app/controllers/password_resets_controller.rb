@@ -4,8 +4,13 @@ class PasswordResetsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
-    user.send_password_reset if user
-    redirect_to root_url, :notice => t("send_successfully")
+    if !user.nil?
+      user.send_password_reset 
+      redirect_to root_url, :notice => I18n.t("send_successfully")
+    else
+      flash[:error] = I18n.t("email_null")
+      render :new
+    end
   end
 
   def edit
@@ -15,9 +20,9 @@ class PasswordResetsController < ApplicationController
   def update
     @user = User.find_by_password_reset_token!(params[:id])
     if @user.password_reset_sent_at < 2.hours.ago
-      redirect_to new_password_reset_path, :alert => t("send_expired")
+      redirect_to new_password_reset_path, :alert => I18n.t("send_expired")
     elsif @user.update_attributes(user_params)
-      redirect_to root_url, :notice => t("login_again")
+      redirect_to root_url, :notice => I18n.t("login_again")
     else
       render :edit
     end
