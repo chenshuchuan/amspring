@@ -16,6 +16,7 @@ gem 'acts-as-messageable'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
+  gem 'mysql2'
 end
 
 group :test do
