@@ -4,21 +4,21 @@ test: &test
   pool: 5
   timeout: 5000
 
-#development:
-#  adapter: postgresql
-#  encoding: utf8
-#  database: sample_development
-#  username: csc
-#  password: "123456"
-#  timeout: 5000
-
 development:
-  adapter: mysql2
-  database: sample_development
+  adapter: postgresql
   encoding: utf8
-  username: root
+  database: sample_development
+  username: csc
   password: "123456"
-  socket: /var/run/mysqld/mysqld.sock
+  timeout: 5000
+
+#development:
+#  adapter: mysql2
+#  database: sample_development
+#  encoding: utf8
+#  username: root
+#  password: "123456"
+#  socket: /var/run/mysqld/mysqld.sock
 
 
 production:
