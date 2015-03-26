@@ -1,0 +1,14 @@
+<% provide(:title, 'messages') %>
+  <div id="sidebar" data-turbolinks-permanent>
+    Sidebar, never changes after initial load.
+  </div>
+
+  <div id="flash" data-turbolinks-temporary>
+    You have <%= @messages.count %> messages.
+  </div>
+
+  <section>
+    <%= @messages.each do |m| %>
+        <p><%= m.body %></p>
+    <% end %>
+  </section>

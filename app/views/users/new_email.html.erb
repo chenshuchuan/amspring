@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for ActsAsMessageable::Message.new, 
+                 :url => { :controller => 'users', 
+                 :action => 'create_email', } do |f| %>
+    <ul class="unstyled">
+      <li><%= @user %></li>
+
+      <li>body</li>
+      <li><%= f.text_field :body %></li>
+
+      <li><%= f.submit "send", class: "btn btn-large btn-primary" %></li>
+    </ul>  
+    <% end %>

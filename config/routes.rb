@@ -1,9 +1,9 @@
 SampleApp::Application.routes.draw do
-  get "password_resets/new"
   resources :users
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :send_email
+      post :create_email
     end
   end
 
@@ -18,7 +18,10 @@ SampleApp::Application.routes.draw do
     resources :comments
   end
   resources :relationships, only: [:create, :destroy]
-  resources :password_resets
+
+  resources :password_resets do
+    get 'new', on: :collection
+  end
   
   root to: 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
@@ -27,5 +30,6 @@ SampleApp::Application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/messages', to: 'users#messages', via: 'get'
 
 end

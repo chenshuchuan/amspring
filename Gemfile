@@ -12,6 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'rails_kindeditor'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick'
+gem 'acts-as-messageable'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'

@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @microposts = Micropost.paginate(:page => params[:page], :per_page => 10)
-    render :layout => "home"
+    #render :layout => "home"
 =begin
   	if signed_in?
       print @microposts

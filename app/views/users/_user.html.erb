@@ -1,6 +1,7 @@
 <li>
   <%= gravatar_for user %>
   <%= link_to user.name, user %>
+  <%= link_to "send_email", send_email_user_path(user.id)%>
   <% if current_user.admin? && !current_user?(user)%>
       <hr />
       <%= link_to t("delete"), user, method: :delete, 

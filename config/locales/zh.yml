@@ -266,3 +266,5 @@ zh:
   send_resetpassword_email: 请打开下面的链接重置您的密码：
   pass_email: 如果您没有请求密码重置，只是忽略这封电子邮件，您的密码将继续保持不变。
   hi: 亲爱的
+  inbox: 收件箱
+  outbox: 发件箱

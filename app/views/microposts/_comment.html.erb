@@ -1,5 +1,6 @@
 <% sum = 0 %>
-<div><%= t('comment_count')%>: <%= @micropost.comments.count()%><%= t('number_comnet')%></div><br/>
+<div><%= t('comment_count')%>: <%= @micropost.comments.count()%>
+     <%= t('number_comnet')%></div><br/>
 <% @micropost.comments.each do |comment| %>
 <div class="comment">
   <div class="pull-left">

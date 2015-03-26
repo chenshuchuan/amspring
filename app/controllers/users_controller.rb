@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, 
-                only: [:index, :edit, :update, :destroy, :following, :followers]
+                only: [:index, :edit, :update, :destroy, :following, :followers, :messages]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
@@ -61,6 +61,42 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
+  end
+
+  def send_email
+    @user = User.find(params[:id])
+    render 'new_email'
+  end
+
+  def create_email
+    @user = User.find(params[:id])
+    current_user.send_message(@user,params[:acts_as_messageable_message][:body])
+    redirect_to users_url
+  end
+
+  def messages
+    @messages = current_user.messages
+  end
+
+  def inbox
+    @messages = current_user.received_messages
+  end
+
+  def outbox
+    @messages = current_user.sent_messages
+  end
+
+  def show_messages
+    @message = current_user.messages.find(params[:id])
+  end
+
+  def destroy_messages
+    @message = current_user.messages.find(params[:id])
+    if @message.destroy
+      flash[:notice] = "All ok"
+    else
+      flash[:error] = "Fail"
+    end
   end
 
   private

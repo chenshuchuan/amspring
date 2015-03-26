@@ -3,6 +3,7 @@ class MicropostsController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit, :update ]
 
   def index
+    redirect_to root_url
   end
 
   def show
@@ -18,7 +19,8 @@ class MicropostsController < ApplicationController
   	@micropost = current_user.microposts.build(micropost_params)
   	if @micropost.save
   	  flash[:success] = I18n.t("micropost_created")
-  	  redirect_to current_user
+      @user = User.find(@micropost.user_id)
+  	  render 'show'
   	else
 =begin
       @feed_items = []

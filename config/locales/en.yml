@@ -266,3 +266,5 @@ en:
   send_resetpassword_email: To reset your password. click the URL below.
   pass_email: If you did not request your password to be reset. just ignore this email and your password will continue to stay the same.
   hi: Dear
+  inbox: inbox
+  outbox: outbox
