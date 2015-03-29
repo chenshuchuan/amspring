@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	has_many :followers, through: :reverse_relationships, source: :follower
     
     mount_uploader :avatar, AvatarUploader
-    acts_as_messageable :required => :body
+    acts_as_messageable :required => :body, presence: true
 
 	validates :name, presence: true, length: { maximum: 50 }
 	before_save { self.email = email.downcase }
@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 	 				  uniqueness: { case_sensitive: false }
 	has_secure_password
 
-	validates :password, length: { minimum: 6 } 	
+	validates :password, length: { minimum: 6 }
 
 	def User.new_remember_token
 	  SecureRandom.urlsafe_base64

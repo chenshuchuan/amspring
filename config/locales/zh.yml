@@ -208,6 +208,7 @@ zh:
   chinese: 中文版  
   english: 英文版    
   edit: 编辑
+  edit_user: 个人编辑
   update_success: 更新成功！
   changes: 更换头像
   save: 保存
@@ -264,7 +265,9 @@ zh:
   login_again: 请重新登录...
   send_expired: 您的验证信息已经过期...
   send_resetpassword_email: 请打开下面的链接重置您的密码：
-  pass_email: 如果您没有请求密码重置，只是忽略这封电子邮件，您的密码将继续保持不变。
+  pass_email: 如果您没有请求密码重置，忽略这封电子邮件，您的密码将继续保持不变。
   hi: 亲爱的
   inbox: 收件箱
   outbox: 发件箱
+  send_success: 发送成功
+  body_not_null: 发送内容不能为空

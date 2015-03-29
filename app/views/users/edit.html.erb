@@ -14,7 +14,7 @@
       <li><%= f.text_field :name %></li>
 
       <li><%= t('email') %></li>
-      <li><%= f.text_field :email %></li>
+      <li><%= f.text_field :email, :readonly=>true %></li>
 
       <li><%= t('password') %></li>
       <li><%= f.password_field :password %></li>

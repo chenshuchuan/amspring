@@ -70,8 +70,14 @@ class UsersController < ApplicationController
 
   def create_email
     @user = User.find(params[:id])
-    current_user.send_message(@user,params[:acts_as_messageable_message][:body])
-    redirect_to users_url
+    if !params[:acts_as_messageable_message][:body].blank?
+      current_user.send_message(@user,params[:acts_as_messageable_message][:body])
+      flash[:success] = I18n.t("send_success")
+      redirect_to users_url
+    else
+      flash[:error] = I18n.t("body_not_null")
+      render 'new_email'
+    end
   end
 
   def messages

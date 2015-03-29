@@ -208,6 +208,7 @@ en:
   chinese: Chinese  
   english: English
   edit: Edit
+  edit_user: Edit_user
   update_success: Update success
   changes: Changes
   save: Save
@@ -268,3 +269,5 @@ en:
   hi: Dear
   inbox: inbox
   outbox: outbox
+  send_success: send email successful
+  body_not_null: body not null

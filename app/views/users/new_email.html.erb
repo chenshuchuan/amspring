@@ -4,11 +4,11 @@
                  :url => { :controller => 'users', 
                  :action => 'create_email', } do |f| %>
     <ul class="unstyled">
-      <li><%= @user %></li>
-
-      <li>body</li>
-      <li><%= f.text_field :body %></li>
-
+      <li>发送: <%= @user.email %></li>
+      <li>内容：</li>
+      <li><%= f.kindeditor :body, :simple_mode => true, :width => 78, :height => 100 %></li>
       <li><%= f.submit "send", class: "btn btn-large btn-primary" %></li>
     </ul>  
     <% end %>
+  </div>
+</div>
