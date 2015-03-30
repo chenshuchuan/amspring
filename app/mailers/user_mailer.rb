@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base
+  #default from: current_user.email
   default from: "shuchuan_chen@126.com"
-
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -15,5 +15,10 @@ class UserMailer < ActionMailer::Base
     @user = user
     @body = body
     mail :to => user.email, :subject => topic
+    #mail(to: @user.email,
+    #     subject: topic) do |format|
+    #  format.html { render 'send_boxs' }
+    #  format.text { render text: 'send_boxs' }
+    #end
   end
 end
