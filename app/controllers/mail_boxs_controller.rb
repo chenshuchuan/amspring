@@ -26,7 +26,10 @@ class MailBoxsController < ApplicationController
     if !@to.nil?
       if !params[:acts_as_messageable_message][:body].blank? and !params[:acts_as_messageable_message][:topic].blank?
         current_user.send_message(@to, params[:acts_as_messageable_message][:topic], 
-        	                           params[:acts_as_messageable_message][:body])
+        	                             params[:acts_as_messageable_message][:body])
+
+        UserMailer.send_boxs(@to, params[:acts_as_messageable_message][:topic],
+                                  params[:acts_as_messageable_message][:body]).deliver
         flash[:success] = I18n.t("send_success")
       else
         flash[:error] = I18n.t("body_not_null")
@@ -37,6 +40,4 @@ class MailBoxsController < ApplicationController
     redirect_to mail_boxs_path
   end
 
-  def send_mail_box
-  end
 end

@@ -10,4 +10,10 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail :to => user.email, :subject => I18n.t("reset_password")
   end
+
+  def send_boxs(user, topic, body)
+    @user = user
+    @body = body
+    mail :to => user.email, :subject => topic
+  end
 end
