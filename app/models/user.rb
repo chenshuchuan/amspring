@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	has_many :followers, through: :reverse_relationships, source: :follower
     
     mount_uploader :avatar, AvatarUploader
-    acts_as_messageable :required => :body, presence: true
+    acts_as_messageable :required => [:topic, :body]
 
 	validates :name, presence: true, length: { maximum: 50 }
 	before_save { self.email = email.downcase }

@@ -3,7 +3,7 @@
                   :url => { :controller => 'mail_boxs', 
                   :action => 'create', } do |f| %>
       <li><%= f.label :to, t(:to)%></li>
-      <li><%= f.text_field :to, :class => "text_field", :value => @user.email, :readonly => true %></li>
+      <li><%= f.text_field :to, :class => "text_field", :placeholder => "example@example.com" %></li>
 
       <li><%= f.label :topic, t(:topic)%></li>
       <li><%= f.text_field :topic, :class => "text_field" %></li> 

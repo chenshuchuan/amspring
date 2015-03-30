@@ -1,21 +1,27 @@
 <% provide(:title, @user.name) %>
 <br />
 <div class="row">
-  <aside class="span4">
+  <div class="span2">
 	  <section>
 	  <h1>
-		<%= gravatar_for @user %>
-	    <%= @user.name %>
-      </h1>
-	  </section>
-    <section>
+		  <%= gravatar_for @user %>
+    </h1>
+    </section><br/>
+    <ul class="unstyled">
+    <li>
+      <%= @user.email %>
+    </li><br/>    
+    <li>
       <%= render 'shared/stats' %>
-    </section>
-  </aside>
+    </li><br/>
+    <li>
+      <%= render 'follow_form' if signed_in? %>
+    </li>
+  </ul>
+  </div>
 
   <div class="span8">
-  <hr/>
-    <%= render 'follow_form' if signed_in? %>
+    
   	<% if @user.microposts.any? %>
       <h3>
       <% if current_user?(@user)%>

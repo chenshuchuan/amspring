@@ -1,0 +1,22 @@
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">收件箱</a></li>
+    <li><a href="#tab2" data-toggle="tab">发件箱</a></li>
+    <li><a href="#tab3" data-toggle="tab">新建邮件</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <%= render 'mail_boxs/inbox_list' %>
+    </div>
+
+    <div class="tab-pane" id="tab2">
+      <%= render 'mail_boxs/outbox_list' %>
+    </div>
+
+    <div class="tab-pane" id="tab3">
+      <%= render 'mail_boxs/new_box' %>
+    </ul>  
+    </div>
+
+  </div>
+</div>

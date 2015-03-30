@@ -23,6 +23,8 @@ SampleApp::Application.routes.draw do
     get 'new', on: :collection
   end
   
+  resources :mail_boxs, only: [:index, :show, :create, :destroy]
+
   root to: 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

@@ -241,8 +241,8 @@ zh:
   follow: 关注
   unfollow: 取消关注
   view_my_profile: 我的个人信息
-  following: 我的关注
-  followers: 我的粉丝
+  following: 关注
+  followers: 粉丝
   floor: 楼
   comment_count: 评论总数
   number_comnet: 条
@@ -271,3 +271,9 @@ zh:
   outbox: 发件箱
   send_success: 发送成功
   body_not_null: 发送内容不能为空
+  to: 发送邮箱到
+  topic: 标题
+  body: 内容
+  send: 发送
+  unread: 未读
+  read: 已读

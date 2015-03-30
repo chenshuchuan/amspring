@@ -271,3 +271,9 @@ en:
   outbox: outbox
   send_success: send email successful
   body_not_null: body not null
+  to: send email to
+  topic: topic
+  body: body
+  send: send email
+  unread: unread
+  read: read
