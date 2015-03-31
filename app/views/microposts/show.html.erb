@@ -1,10 +1,9 @@
-<br />
 <h1><%= @micropost.title %></h1>
 <table class="table table-hover">
-<td><%= t('author')%>: <%= @user.name %></td>
-<td>
-    <%= t('created_time')%>: <%= @micropost.created_at.strftime('%Y-%m-%d %H:%M') %>
- </td>  
+  <td><%= t('author')%>: <%= @user.name %></td>
+  <td>
+      <%= t('created_time')%>: <%= @micropost.created_at.strftime('%Y-%m-%d %H:%M') %>
+  </td>  
   <% if current_user?(@micropost.user) %>
     <td>
       <%= t('updated_time')%>: <%= @micropost.updated_at.strftime('%Y-%m-%d %H:%M') %>
@@ -20,7 +19,6 @@
     </td> 
   <% end %>
 </table>
-<br />
 <p><%= @micropost.content.html_safe %></p><hr/>
 
 <% if !@micropost.comments.nil? %>
@@ -30,7 +28,7 @@
 <%= form_for([ @micropost,  @micropost.comments.build]) do |f| %>
   <p> <%= f.hidden_field :user_id %></p>
   <p>
-    <%= f.kindeditor :body, :simple_mode => true, :width => 778, :height => 100 %>
+    <%= f.kindeditor :body, :simple_mode => true, :width => 900, :height => 100 %>
   </p>
   <p>
   <% if signed_in? %>
@@ -39,5 +37,4 @@
     <%= t('comment_login')%> <%= link_to t("singin"), signin_path %>
   <% end %>  
   </p>
-  <br />
 <% end %>

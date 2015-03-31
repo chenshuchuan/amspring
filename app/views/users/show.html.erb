@@ -1,5 +1,4 @@
 <% provide(:title, @user.name) %>
-<br />
 <div class="row">
   <div class="span2">
 	  <section>
@@ -8,16 +7,16 @@
     </h1>
     </section><br/>
     <ul class="unstyled">
-    <li>
-      <%= @user.email %>
-    </li><br/>    
-    <li>
-      <%= render 'shared/stats' %>
-    </li><br/>
-    <li>
-      <%= render 'follow_form' if signed_in? %>
-    </li>
-  </ul>
+      <li>
+        <%= @user.email %>
+      </li><br/>    
+      <li>
+        <%= render 'shared/stats' %>
+      </li><br/>
+      <li>
+        <%= render 'follow_form' if signed_in? %>
+      </li>
+    </ul>
   </div>
 
   <div class="span8">
@@ -38,4 +37,3 @@
   	<% end %>
   </div>
 </div>
-
