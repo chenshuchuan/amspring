@@ -244,7 +244,7 @@ zh:
   following: 关注
   followers: 粉丝
   floor: 楼
-  comment_count: 评论总数
+  comment_count: 评论
   number_comnet: 条
   submit_comment: 提交评论
   comment_login: 评论请先
@@ -277,3 +277,6 @@ zh:
   send: 发送
   unread: 未读
   read: 已读
+  back: 返回
+  reply: 回复
+  fail: 失败

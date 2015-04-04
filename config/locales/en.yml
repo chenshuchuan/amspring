@@ -277,3 +277,6 @@ en:
   send: send email
   unread: unread
   read: read
+  back: back
+  reply: reply
+  fail: fail

@@ -3,14 +3,15 @@
                   :url => { :controller => 'mail_boxs', 
                   :action => 'create', } do |f| %>
       <li><%= f.label :to, t(:to)%></li>
-      <li><%= f.text_field :to, :class => "text_field", :placeholder => "example@example.com" %></li>
+      <li><%= f.text_field :to, :class => "text_field", :value => @user.email, :readonly => true %></li>
 
       <li><%= f.label :topic, t(:topic)%></li>
       <li><%= f.text_field :topic, :class => "text_field" %></li> 
 
       <li><%= f.label :body, t(:body) %></li>
       <li><%= f.kindeditor :body, :simple_mode => true, :width => 78, :height => 100 %></li>
-      
-      <li><%= f.submit t(:send), class: "btn btn btn-primary" %></li>
+
+      <li><%= f.submit t(:send), class: "btn btn btn-primary" %>
+      <%= link_to t(:back), mail_boxs_path, class: "btn btn btn-info" %></li>
   <% end %>
 </ul>

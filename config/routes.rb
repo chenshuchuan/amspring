@@ -1,31 +1,27 @@
 SampleApp::Application.routes.draw do
-  resources :users
+  root to: 'static_pages#home'
   resources :users do
     member do
-      get :following, :followers, :send_email
-      post :create_email
+      get :following, :followers
     end
-  end
-
-  resources :users do
     collection do
       get :tigers
-    end
+    end    
   end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:show, :new, :create, :destroy, :edit, :update]
   resources :microposts do
     resources :comments
   end
   resources :relationships, only: [:create, :destroy]
-
   resources :password_resets do
     get 'new', on: :collection
   end
-  
-  resources :mail_boxs, only: [:index, :show, :create, :destroy]
-
-  root to: 'static_pages#home'
+  resources :mail_boxs, only: [:index, :show, :create, :destroy] do
+    member do
+      get  :send_email
+      post :create_email
+    end    
+  end
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
@@ -33,5 +29,4 @@ SampleApp::Application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/messages', to: 'users#messages', via: 'get'
-
 end

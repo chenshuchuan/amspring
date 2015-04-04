@@ -20,7 +20,6 @@ class MicropostsController < ApplicationController
   	if @micropost.save
   	  flash[:success] = I18n.t("micropost_created")
       @user = User.find(@micropost.user_id)
-  	  render 'show'
   	else
 =begin
       @feed_items = []
@@ -28,6 +27,7 @@ class MicropostsController < ApplicationController
 =end     
       render 'new'
     end
+    render 'show'
   end
 
   def edit

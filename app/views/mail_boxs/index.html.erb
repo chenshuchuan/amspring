@@ -1,7 +1,7 @@
 <div class="tabbable"> <!-- Only required for left/right tabs -->
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#tab1" data-toggle="tab">收件箱</a></li>
-    <li><a href="#tab2" data-toggle="tab">发件箱</a></li>
+    <li class="active"><a href="#tab1" data-toggle="tab">收件箱(<%= @inboxs.count() %>)</a></li>
+    <li><a href="#tab2" data-toggle="tab">发件箱(<%= @outboxs.count() %>)</a></li>
     <li><a href="#tab3" data-toggle="tab">新建邮件</a></li>
   </ul>
   <div class="tab-content">
