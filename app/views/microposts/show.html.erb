@@ -4,16 +4,14 @@
 <table class="table table-hover">
   <td><%= t('author')%>: <%= @user.name %></td>
   <td>
-      <%= t('created_time')%>: <%= @micropost.created_at.strftime('%Y-%m-%d %H:%M') %>
+    <%= t('created_time')%>: <%= @micropost.created_at.strftime('%Y-%m-%d %H:%M') %>
+  </td>  
+  <td class="pull-right">
+    <%= render 'shared/shareto' %>
   </td>  
   <% if current_user?(@micropost.user) %>
     <td>
-      <%= t('updated_time')%>: <%= @micropost.updated_at.strftime('%Y-%m-%d %H:%M') %>
-    </td>  
-    <td>
       <%= link_to t("edit"), edit_micropost_path(@micropost), class: "btn btn-mini  btn-info"%>
-    </td>
-    <td>
       <%= link_to t("delete"), @micropost, method: :delete,
                                               data: { confirm: t("your_sure") },
                                               title: @micropost.title,
