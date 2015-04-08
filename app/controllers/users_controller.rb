@@ -63,48 +63,6 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
-  def send_email
-    @user = User.find(params[:id])
-    render 'new_email'
-  end
-
-  def create_email
-    @user = User.find(params[:id])
-    if !params[:acts_as_messageable_message][:body].blank?
-      current_user.send_message(@user,params[:acts_as_messageable_message][:body])
-      flash[:success] = I18n.t("send_success")
-      redirect_to users_url
-    else
-      flash[:error] = I18n.t("body_not_null")
-      render 'new_email'
-    end
-  end
-
-  def messages
-    @messages = current_user.messages
-  end
-
-  def inbox
-    @messages = current_user.received_messages
-  end
-
-  def outbox
-    @messages = current_user.sent_messages
-  end
-
-  def show_messages
-    @message = current_user.messages.find(params[:id])
-  end
-
-  def destroy_messages
-    @message = current_user.messages.find(params[:id])
-    if @message.destroy
-      flash[:notice] = "All ok"
-    else
-      flash[:error] = "Fail"
-    end
-  end
-
   private
 
     def user_params

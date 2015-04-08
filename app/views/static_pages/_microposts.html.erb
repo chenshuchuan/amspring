@@ -1,15 +1,18 @@
-<br />
-<h1><%= t('my_blog')%></h1>
-  <% @microposts.each do |m| %>
+<div class="pull-left">
+  <h1><%= t('my_blog')%></h1>
+</div>
+<% @microposts.each do |m| %>
   <table class="table table-hover">  
   <tr class="info">
   <td>
     <%= link_to gravatar_for(avatar(m.user_id)), user_path(m.user_id) %>
     <p><%= link_to m.title, micropost_path(m.id) %></p>
     <span class="timestamp">
-      <%= time_ago_in_words(m.created_at) %>
+      <%= avatar(m.user_id).name %>.于
+      <%= time_ago_in_words(m.created_at) %>发布
+      <%= t('comment_count')%>: <%= m.comments.count()%>
     </span>
   </td>
   </tr>
   </table>    
-  <% end %>
+<% end %>
