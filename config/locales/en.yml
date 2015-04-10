@@ -280,3 +280,7 @@ en:
   back: back
   reply: reply
   fail: fail
+  new_box: new email
+  send_user: send user
+  times: time
+  status: status  

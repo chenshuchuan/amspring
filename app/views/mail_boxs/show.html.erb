@@ -1,14 +1,14 @@
 <dl class="dl-horizontal">
-  <dt>标题:</dt>
+  <dt><%= t('topic')%>:</dt>
   <dd><%= @message.topic %></dd>
 
-  <dt>发件人:</dt>
+  <dt><%= t('send_user')%>:</dt>
   <dd><%= get_box_user(@message.sent_messageable_id) %></dd>  
 
-  <dt>时间:</dt>
+  <dt><%= t('times')%>:</dt>
   <dd><%= @message.created_at.strftime('%Y-%m-%d %H:%M') %></dd>
 
-  <dt>内容:</dt>
+  <dt><%= t('body')%>:</dt>
   <dd><%= @message.body.html_safe %></dd>   
   <br />
   <dt><%= link_to t("back"), mail_boxs_path, class: "btn btn-mini btn-info" %>

@@ -1,5 +1,12 @@
 <footer class="navbar navbar-fixed-bottom navbar-inverse">
-  <ul>
-		<li>开源中国，开源世界</li>
+<div class="container">
+  <ul class="nav">
+    <li><%= link_to t("chinese"), :controller => controller.controller_name,
+              :action => controller.action_name, :locale => "zh" %>
+    </li>
+    <li><%= link_to t("english"), :controller => controller.controller_name,
+              :action => controller.action_name, :locale => "en" %>
+    </li>  
   </ul>
+</div>  
 </footer>
