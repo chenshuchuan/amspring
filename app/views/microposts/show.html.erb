@@ -27,11 +27,11 @@
 
 <%= form_for([ @micropost,  @micropost.comments.build]) do |f| %>
   <p> <%= f.hidden_field :user_id %></p>
+  <% if signed_in? %>
   <p>
     <%= f.kindeditor :body, :width => 900, :height => 100 %>
   </p>
   <p>
-  <% if signed_in? %>
     <%= f.submit t("submit_comment"), class: "btn btn-primary" %>
   <% else %>
     <%= t('comment_login')%> <%= link_to t("singin"), signin_path %>
