@@ -12,10 +12,10 @@
               :action => controller.action_name, :locale => "en" %>
         </li>  
         -->
-        <li><%= link_to t("home"), root_path %></li>
+        <!--li><%= link_to t("home"), root_path %></li-->
         <!--li><%= link_to t("help"), help_path %></li-->
-        <li><%= link_to t("new_micropost"), new_micropost_path %></li>
         <% if signed_in? %>
+        <li><%= link_to t("new_micropost"), new_micropost_path %></li>
           <li id="fat-menu" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= t('account') %> <b class="caret"></b>
