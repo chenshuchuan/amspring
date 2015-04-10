@@ -5,6 +5,18 @@ namespace :db do
     make_microposts
     make_relationships
   end
+  task make_admin: :environment do
+    make_admin
+  end
+
+end
+
+def make_admin
+    User.create!(name: "admin",
+                 email: "admin@diandiyun.com",
+                 password: "123456",
+                 password_confirmation: "123456",
+                 admin: true)
 end
 
 def  make_users
