@@ -21,20 +21,15 @@
 </table>
 <p><%= @micropost.content.html_safe %></p><hr/>
 
-<% if !@micropost.comments.nil? %>
+<div class="comment_show">
   <%= render 'comment' %>
-<% end %>
+</div>
 
-<%= form_for([ @micropost,  @micropost.comments.build]) do |f| %>
-  <p> <%= f.hidden_field :user_id %></p>
+<%= form_for([ @micropost, @micropost.comments.build], remote: true) do |f| %>
   <% if signed_in? %>
-  <p>
     <%= f.kindeditor :body, :width => 900, :height => 100 %>
-  </p>
-  <p>
     <%= f.submit t("submit_comment"), class: "btn btn-primary" %>
   <% else %>
     <%= t('comment_login')%> <%= link_to t("singin"), signin_path %>
   <% end %>  
-  </p>
 <% end %>

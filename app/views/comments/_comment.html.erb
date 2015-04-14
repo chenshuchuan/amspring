@@ -1,0 +1,31 @@
+  <div class="comment">
+  <div class="avatar">
+    <%= link_to gravatar_for(avatar(comment.user_id)), user_path(comment.user_id) %>
+  </div>
+  <table class="table">
+    <div class="pull-left02"> 
+      <ul class="unstyled">
+        <li class="pull-left"><%= comment_user(comment.user_id) %></li>
+        <li class="pull-left li-02"><%= time_ago_in_words(comment.created_at) %></li>
+        <li class="li-03">
+          <div>
+          	<% if signed_in? && current_user.admin? %>
+      				<%= link_to t('delete_it'), [comment.micropost, comment],
+                													method: :delete,
+                													remote: true,
+                													data: { confirm: t('your_sure') },
+                													class: "btn btn-mini btn-danger" %>
+            <% else%>    	
+            	.												
+    			  <% end %>
+  				</div>
+        </li>
+      </ul>
+    </div>
+    <div class="pull-left02">
+      <ul>	
+          <%= comment.body.html_safe %>
+      </ul>
+    </div>
+  </table>
+</div>

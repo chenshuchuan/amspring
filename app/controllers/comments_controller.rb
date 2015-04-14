@@ -5,15 +5,23 @@ class CommentsController < ApplicationController
     @micropost = Micropost.find(params[:micropost_id])
     params[:comment][:user_id] = current_user.id
     @comment = @micropost.comments.create(comment_params)
-    flash[:success] = I18n.t("comment_created")
-    redirect_to micropost_path(@micropost)
+
+    respond_to do |format|
+      format.html { redirect_to micropost_path(@micropost) }
+      format.js 
+    end
+    
   end
  
   def destroy
     @micropost = Micropost.find(params[:micropost_id])
     @comment = @micropost.comments.find(params[:id])
     @comment.destroy
-    redirect_to micropost_path(@micropost)
+    
+    respond_to do |format|
+      format.html { redirect_to micropost_path(@micropost) }
+      format.js 
+    end    
   end
   
   private

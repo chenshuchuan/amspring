@@ -36,19 +36,28 @@ textarea {
   background-color: rgba(203, 193, 187, 0.65);
 }
 
+.avatar{
+  float: left;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 7px;
+}
+
+.pull-left02{
+  margin-left: 70px;
+  display: block;
+}
+
 .pull-left02{
   margin-left: 70px;
 }
-.li-01{
-  list-style-type:none;float:left;
-}
 
 .li-02{
-  list-style-type:none;float:left;margin: 0 20px
+  margin: 0 20px
 }
 
 .li-03{
-  list-style-type:none; margin-left: 750px
+   margin-left: 750px
 }
 /* typography */
 h1, h2, h3, h4, h5, h6 {
