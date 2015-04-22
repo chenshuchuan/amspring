@@ -1,2 +1,15 @@
-<%= render 'static_pages/microposts' %>
-<%= will_paginate @microposts %>
+  <div class="row-fluid">
+    <div class="span9">
+      <div class="well">
+        <%= render 'static_pages/microposts' %>
+        <%= will_paginate @microposts %>
+      </div>
+    </div>
+    <div class="span3">
+      <div class="well">
+        <%= render 'shared/datetime' %>
+      </div>    
+      <div class="well">
+        <%= render 'shared/statistics' %>
+      </div>      
+  </div> 

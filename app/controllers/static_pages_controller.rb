@@ -2,22 +2,14 @@ class StaticPagesController < ApplicationController
 
   def home
     @microposts = Micropost.paginate(:page => params[:page], :per_page => 10)
-    #render :layout => "home"
-=begin
-  	if signed_in?
-      print @microposts
-  	  @micropost = current_user.microposts.build
-  	  @feed_items = current_user.feed.paginate(page: params[:page])
-  	end
-=end   
+  	#if signed_in?
+  	#  @micropost = current_user.microposts.build
+  	#  @feed_items = current_user.feed.paginate(page: params[:page])
+  	#end
+    render :layout => "home"
   end
 
-  def help
-  end
-
-  def about
-  end
-
-  def contact
-  end
+  def help;end
+  def about;end
+  def contact;end
 end

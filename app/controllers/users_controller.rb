@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  #layout "home", only: [:new, :create, :edit, :update]
+
   before_action :signed_in_user, 
                 only: [:index, :edit, :update, :destroy, :following, :followers, :messages]
   before_action :correct_user,   only: [:edit, :update]
