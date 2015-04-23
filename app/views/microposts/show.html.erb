@@ -27,7 +27,7 @@
 
 <%= form_for([ @micropost, @micropost.comments.build], remote: true) do |f| %>
   <% if signed_in? %>
-    <%= f.kindeditor :body, :width => 900, :height => 100 %>
+    <%= f.kindeditor :body, :width => 853, :height => 100 %>
     <%= f.submit t("submit_comment"), class: "btn btn-primary" %>
   <% else %>
     <%= t('comment_login')%> <%= link_to t("singin"), signin_path %>

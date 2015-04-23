@@ -1,10 +1,8 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <div class="span2">
+<div class="row-fluid">
+  <div class="span3">
 	  <section>
-	  <h1>
-		  <%= gravatar_for @user %>
-    </h1>
+	  <h1><%= gravatar_for @user %></h1>
     </section><br/>
     <ul class="unstyled">
       <li>
@@ -19,7 +17,7 @@
     </ul>
   </div>
 
-  <div class="span8">
+  <div class="span9">
     
   	<% if @user.microposts.any? %>
       <h3>
