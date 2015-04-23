@@ -11,10 +11,24 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container" style="width: 1200px;">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
-      <%= yield %>
+    <div class="row-fluid">
+      <div class="span9">
+        <div class="well">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+      <div class="span3">   
+        <div class="well">
+          <%= render 'shared/datetime' %>
+        </div>        
+        <div class="well">
+          <%= render 'shared/statistics' %>
+        </div>
+      </div>  
+    </div>
     <!--%= debug(params) if Rails.env.development? %-->
     <%= render 'layouts/footer' %>
   </div>
