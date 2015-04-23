@@ -1,11 +1,9 @@
 <% provide(:title, t('sign_up')) %>
-<br />
-<h1><%= t('sign_up') %></h1>
-<div class="row">
-  <div class="span6 offset3">
+<section class="login">
+<div class="titulo"><%= t('sign_up') %></div>
 	<%= form_for(@user) do |f| %>
-      <%= render 'fields', f: f %><br />
-	  <%= f.submit t("new"), class: "btn btn-large btn-primary" %>
-	<% end %>
-  </div>
+      <%= render 'fields', f: f %>
+	  <%= f.submit t("new"), class: "enviar" %>
+	<% end %> 	
 </div>
+</section>

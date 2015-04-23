@@ -231,9 +231,9 @@ zh:
   profile: 个人信息
   logout: 退出登录
   singin: 登录
-  sign_in: 登录界面
+  sign_in: 开始登录
   singup: 注册
-  sign_up: 注册页面
+  sign_up: 注册新用户
   new_user: 新用户
   my_blog: 我的博客
   new_blog_here: 请在此输入博客题目...

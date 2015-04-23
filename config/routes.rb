@@ -13,9 +13,7 @@ SampleApp::Application.routes.draw do
     resources :comments
   end
   resources :relationships, only: [:create, :destroy]
-  resources :password_resets do
-    get 'new', on: :collection
-  end
+  resources :password_resets 
   resources :mail_boxs, only: [:index, :show, :create, :destroy] do
     member do
       get  :send_email

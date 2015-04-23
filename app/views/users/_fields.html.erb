@@ -1,15 +1,9 @@
 <%= render 'shared/error_messages', object: f.object %>
 
-<p><%= t('name') %></p>
-<%= f.text_field :name %>
+<%= f.text_field :name, placeholder: t('name') %>
 
-<p><%= t('email') %></p>
-<%= f.text_field :email %>
+<%= f.text_field :email, placeholder: t('email') %>
 
-<p>
-  <%= t('password') %>
-</p>
-<%= f.password_field :password %>
+<%= f.password_field :password, placeholder: t('password') %>
 
-<%= f.label :password_confirmation, t("confirmation") %>
-<%= f.password_field :password_confirmation %>
+<%= f.password_field :password_confirmation, placeholder: t('confirmation') %>

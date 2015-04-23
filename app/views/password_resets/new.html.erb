@@ -1,11 +1,7 @@
-<div class="row">
-  <div class="span6 offset3">
+<section class="login">
+  <div class="titulo">发送邮件重设密码</div>
     <%= form_tag password_resets_path, :method => :post do %>
-      <ul class="unstyled ul-top">
-        <li><p><%= t('reset_email') %>:</p></li>
-        <li><%= text_field_tag :email, params[:email] %></li>
-        <li><%= submit_tag t("reset_password"), class: "btn btn btn-primary" %></li>
-      </ul>
+      <%= text_field_tag :email, params[:email], placeholder: t('reset_email') %>
+      <%= submit_tag t("reset_password"), class: "enviar" %>
     <% end %>
-  </div> 
-</div>
+</section>
