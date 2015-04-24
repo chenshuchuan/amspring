@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-  layout "home"
+  layout "user"
   def new;end
 
   def create

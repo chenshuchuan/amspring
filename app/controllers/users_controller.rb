@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "home", only: [:new, :create]
+  layout "user", only: [:new, :create]
 
   before_action :signed_in_user, 
                 only: [:index, :edit, :update, :destroy, :following, :followers, :messages]
