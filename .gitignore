@@ -19,3 +19,4 @@
 # Ignore config *yml
 /config/*.yml
 !/config/sunspot.yml
+/solr
