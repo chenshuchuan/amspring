@@ -221,8 +221,8 @@ zh:
   users: 所有用户
   home: 主页
   help: 帮助
-  contact: 有意见啊？
-  new_micropost: 新建博客
+  contact: 给点建议？
+  new_micropost: 新博客
   account: 账户信息
   name: 姓名
   email: 邮箱
@@ -285,3 +285,7 @@ zh:
   send_user: 发件人
   times: 时间
   status: 状态
+  web_count: 网站统计信息
+  people_count : 人数 
+  blog_count: 文章
+  comment_count: 评论

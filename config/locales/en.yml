@@ -208,7 +208,7 @@ en:
   chinese: Chinese  
   english: English
   edit: Edit
-  edit_user: Edit_user
+  edit_user: EditUser
   update_success: Update success
   changes: Changes
   save: Save
@@ -222,7 +222,7 @@ en:
   home: Home
   help: Help
   contact: Contact
-  new_micropost: New_Blog
+  new_micropost: NewBlog
   account: Account
   name: Name
   email: Email
@@ -234,8 +234,8 @@ en:
   singin: Singin
   sign_in: Sign in
   singup: Singup
-  sign_up: Sign_up
-  new_user: new_user
+  sign_up: Sign up
+  new_user: New user
   my_blog: My Blog
   new_blog_here: Please enter here the blog topics ...
   microposts: Microposts
@@ -245,7 +245,7 @@ en:
   following: Following
   followers: Followers
   floor: Floor
-  comment_count: Comment_count
+  comment_count: Comment count
   number_comnet: Commnets
   submit_comment: Submit comment
   comment_login: Commnets before
@@ -257,7 +257,7 @@ en:
   micropost_created: Micropost created!
   micropost_updated: Micropost updated!
   comment_created: Comment created!
-  forgotten_password: forgotten_password?
+  forgotten_password: Forgotten password?
   reset_password: Reset Password
   reset_email: Please enter the registered email address
   update_password: Update Password
@@ -284,4 +284,8 @@ en:
   new_box: new email
   send_user: send user
   times: time
-  status: status  
+  status: status
+  web_count: Site statistics
+  people_count : people 
+  blog_count: bolg
+  comment_count: comments
