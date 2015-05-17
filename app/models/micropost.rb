@@ -14,6 +14,6 @@ class Micropost < ActiveRecord::Base
   end
 
   searchable do
-    text :title, :category
+    text :title, :categ_name
   end   
 end

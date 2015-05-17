@@ -7,7 +7,7 @@
   <span class="timestamp">
     <%= time_ago_in_words(micropost.created_at) %>
   </span>  
-  <span><%= micropost.category %></span>
+  <span><%= micropost.categ_name %></span>
   <span><%= t('comment_count')%>: <%= micropost.comments.count()%></span>
   </td>
   <td>

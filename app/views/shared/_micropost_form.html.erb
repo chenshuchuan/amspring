@@ -2,7 +2,7 @@
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class="field">
 	  <%= f.text_field :title, placeholder: t("new_blog_here") %>
-	  <%= f.select :category, Category.all.collect {|c| c.name } %>
+	  <%= f.select :categ_name, Category.all.collect {|c| c.name } %>
 		<%= f.kindeditor :content, :width => 852, :height => 350 %>
 	</div>
 	<%= f.submit t("new"), class: "btn btn-primary" %>

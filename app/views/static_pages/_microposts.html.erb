@@ -8,7 +8,7 @@
     <span class="timestamp">
       <%= time_ago_in_words(m.created_at) %><%= t('public')%>
     </span>
-    <span><%= m.category %></span>
+    <span><%= m.categ_name %></span>
     <span><%= t('comment_count')%>: <%= m.comments.count()%></span>
   </td>
   </tr>
