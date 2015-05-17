@@ -2,6 +2,7 @@
 <div class="category_show">
   <%= render 'category' %>
 </div>
+<% if can? :manage, Category %>
 <div class="category-box">
   <%= form_tag "/category", method: :post, remote: 'true' do %>
     <div class="category-content">
@@ -11,3 +12,4 @@
     <%= submit_tag t('add'), class: 'btn btn-small btn-primary' %>
   <% end %>
 </div>
+<% end %>
