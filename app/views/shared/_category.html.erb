@@ -1,7 +1,9 @@
 <h2><%= t('category') %></h2>
 <% Category.all.each do |c| %>
-<div class="row-fluid">
-  <div class="span4 offset3"><%= c.name %></div>
-  <div class="span4"><%= get_category(c.name).count() %></div>
-</div>
+  <% if get_category(c.name).count()!=0 %>
+    <div class="row-fluid">
+      <div class="span4 offset3"><%= c.name %></div>
+      <div class="span4"><%= get_category(c.name).count() %></div>
+    </div>
+  <% end %>  
 <% end %>
