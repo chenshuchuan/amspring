@@ -285,7 +285,15 @@ zh:
   send_user: 发件人
   times: 时间
   status: 状态
-  web_count: 网站统计信息
+  web_count: 统计信息
   people_count : 人数 
   blog_count: 文章
   comment_count: 评论
+  public: 发布
+  category: 类别
+  category_name: 类名
+  category_m: 分类管理
+  input_category: 输入类名
+  add: 添加
+  category_new: 新增分类(类名不能重复)
+  category_set: 分类设置

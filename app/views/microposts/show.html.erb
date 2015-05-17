@@ -3,6 +3,7 @@
 </div>
 <table class="table table-hover">
   <td><%= t('author')%>: <%= @user.name %></td>
+  <td><%= t('category')%>: <%= @micropost.category %></td>
   <td>
     <%= t('created_time')%>: <%= @micropost.created_at.strftime('%Y-%m-%d %H:%M') %>
   </td>  

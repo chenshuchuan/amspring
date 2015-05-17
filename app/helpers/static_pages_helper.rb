@@ -15,4 +15,7 @@ module StaticPagesHelper
   	@csum = Comment.all.count()
   end
 
+  def get_category(name)
+     @category = Micropost.where('category'=> name )
+  end
 end

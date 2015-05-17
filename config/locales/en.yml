@@ -289,3 +289,11 @@ en:
   people_count : people 
   blog_count: bolg
   comment_count: comments
+  public: public
+  category: Category
+  category_name: name
+  category_m: Category management
+  input_category: input category
+  add : add
+  category_new: New category (class names cannot be repeated)
+  category_set: Category set

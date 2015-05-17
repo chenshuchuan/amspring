@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325132151) do
+ActiveRecord::Schema.define(version: 20150516044008) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -49,8 +55,10 @@ ActiveRecord::Schema.define(version: 20150325132151) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+    t.string   "category"
   end
 
+  add_index "microposts", ["category"], name: "index_microposts_on_category", using: :btree
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
 
   create_table "relationships", force: true do |t|

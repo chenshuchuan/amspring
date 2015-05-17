@@ -1,0 +1,13 @@
+<p><%= t('category_m')%></p>
+<div class="category_show">
+  <%= render 'category' %>
+</div>
+<div class="category-box">
+  <%= form_tag "/category", method: :post, remote: 'true' do %>
+    <div class="category-content">
+      <p><%= t('category_new')%>：</p>
+      <%= text_field_tag :name, nil, placeholder: t("input_category") %>
+    </div>
+    <%= submit_tag t('add'), class: 'btn btn-small btn-primary' %>
+  <% end %>
+</div>

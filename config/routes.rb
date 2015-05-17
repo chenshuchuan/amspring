@@ -20,6 +20,8 @@ SampleApp::Application.routes.draw do
       post :create_email
     end    
   end
+  resources :category
+  
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
