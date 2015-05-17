@@ -9,8 +9,6 @@
   </span>  
   <span><%= micropost.categ_name %></span>
   <span><%= t('comment_count')%>: <%= micropost.comments.count()%></span>
-  </td>
-  <td>
   <% if current_user?(micropost.user) %>
   <span>
     <%= link_to t("edit"), edit_micropost_path(micropost), class: "btn btn-mini btn-warning"%>

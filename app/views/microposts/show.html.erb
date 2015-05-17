@@ -20,7 +20,7 @@
     </td> 
   <% end %>
 </table>
-<p><%= sanitize @micropost.content %></p><hr/>
+<p><%= @micropost.content.html_safe %></p><hr/>
 
 <div class="comment_show">
   <%= render 'comment' %>
