@@ -16,6 +16,6 @@ module StaticPagesHelper
   end
 
   def get_category(name)
-     @category = Micropost.where('categ_name'=> name )
+     @category = Micropost.where('categ_name=?', name )
   end
 end

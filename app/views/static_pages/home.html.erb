@@ -1,7 +1,33 @@
-<ul class="nav search">
+<span class="nav search">
   <%= form_tag root_path, method: 'get' do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search ..." %>
+    <%= text_field_tag :search, params[:search], placeholder: t("search") %>
   <% end %> 
-</ul>  
-<%= render 'static_pages/microposts' %>
-<%= will_paginate @microposts %>
+</span> 
+<div class="table">
+  <%=link_to t('all'), {:controller=> 'static_pages', 
+      	              :action => 'search', 
+      	              :search => '' }, 
+      	              :remote => true,
+      	              class: "btn" %>
+  <% Category.all.each do |c| %>
+    <% if get_category(c.name).count()!=0 %>
+    <span><%=link_to c.name, { :controller=> 'static_pages', 
+      	                      :action => 'search', 
+      	                      :search => c.name }, 
+      	                      :remote => true,
+      	                      class: "btn" %></span>
+    
+    <% end %>  
+  <% end %>
+</div>
+
+<div class="searchs">
+  <%= render 'static_pages/microposts' %>
+  <%= will_paginate @microposts %>	
+</div>
+
+<style type="text/css">
+form {
+  margin: 0 0 0 0;
+}
+</style>

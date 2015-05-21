@@ -297,3 +297,5 @@ en:
   add : add
   category_new: New category (class names cannot be repeated)
   category_set: Category set
+  all: all
+  search: Input key word...
